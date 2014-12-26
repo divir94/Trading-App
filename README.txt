@@ -1,0 +1,1 @@
+Visualization tool to get returns on investment on the following portfolio of stocks - buy past winners and shot sell past losers.
