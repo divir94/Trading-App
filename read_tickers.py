@@ -1,13 +1,13 @@
 import csv
-import pickle
+import json
 
 tickers_dict = {}
 
 with open('WIKI_tickers.csv', 'rU') as f:
     reader = csv.reader(f)
     next(reader)  # skip the header
-    for row in reader:
-        ticker = row[0].split('/')[1]
-        tickers_dict[ticker] = 1
+    for code, name in reader:
+        ticker = code.split('/')[1]
+        tickers_dict[ticker] = name
 
-pickle.dump( tickers_dict, open( "tickers_dict.p", "wb" ) )
+json.dump(tickers_dict, open("tickers_dict.json", "wb"), indent=2)
